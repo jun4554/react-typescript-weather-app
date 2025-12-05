@@ -11,7 +11,7 @@ const Form = (props: FormProps) => {
         <input
           type="text"
           name="city"
-          placeholder="都市名"
+          placeholder="都市名を入力してください"
           onChange={(e) => props.setCity(e.target.value)}
           value={props.city}
         />
