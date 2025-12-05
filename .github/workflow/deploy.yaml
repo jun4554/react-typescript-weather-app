@@ -1,0 +1,31 @@
+name: "Deploy"
+
+on:
+  push:
+    ## mainブランチへのマージのタイミングで発火させる
+    branches:
+      - main
+    ## ビルド後のファイルが出力されるdistもしくはCI関連の処理がある.github/以下に変更があった場合に発火させる
+    paths:
+      - dist/**
+      - .github/**
+
+jobs:
+  deploy-to-xserver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      ## FTP deployを使用したFTPアップロードの記述
+      - name: Upload files on Xserver
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        ## step2でGitHub secretsに登録した認証情報をここで呼び出します
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          ## アップロード元とアップロード先の指定
+          local-dir: ./dist/
+          server-dir: /jun4554.xsrv.jp/public_html/weather
