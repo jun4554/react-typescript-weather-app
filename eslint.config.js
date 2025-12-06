@@ -31,7 +31,7 @@ export default [
      * チェック対象のファイルパターンのグローバル設定。TypeScript と JavaScript の両方を対象とする
      * @see https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores
      */
-    files: ["**/*.ts", "**/*.js", "**/*.tsx"], // 必要に応じて jsx や tsx を追加
+    files: ["**/*.ts", "**/*.tsx"], // 必要に応じて jsx や tsx を追加
 
     /**
      * ESLint のパーサーを typescript-eslint を使用して TypeScript 用に設定
