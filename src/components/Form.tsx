@@ -4,6 +4,8 @@ type FormProps = {
   city: string;
 };
 
+const aaa = 0;
+
 const Form = (props: FormProps) => {
   return (
     <div>
