@@ -29,7 +29,7 @@ const App = () => {
     e.preventDefault();
     setLoading(true);
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=e39d33bca3ee43c699293531243012&q=${city}&aqi=no`,
+      `https://api.weatherapi.com/v1/current.json?key=e39d33bca3ee43c699293531243012&q=${city}&aqi=no`,
     )
       .then((res) => res.json())
       .then((data) => {
