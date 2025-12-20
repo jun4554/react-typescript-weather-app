@@ -1,4 +1,4 @@
-name: Build and Deploy to Xserver
+name: Build and Deploy to CoreServer
 
 on:
   push:
