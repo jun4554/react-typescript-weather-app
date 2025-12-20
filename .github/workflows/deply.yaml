@@ -33,4 +33,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /jun4554.xsrv.jp/public_html/weather/
+          server-dir: /ji-develop.com/public_html/weather/
